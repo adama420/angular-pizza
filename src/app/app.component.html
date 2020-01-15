@@ -1,9 +1,18 @@
 <h1>{{title}}</h1>
-<h2>{{pizza.name}}</h2>
-<h2>{{pizza.prix}}$, pas cher</h2>
+<div *ngIf="selectedPizza">
+  <h2>{{selectedPizza?.name}}</h2>
+  <h2>{{selectedPizza.price}}$, pas cher</h2>
 
-<input [(ngModel)]="pizza.name">
+  <input [(ngModel)]="selectedPizza.name">
+</div>
 
 <!-- l'équivalent de ngModel en code JS serait 
 <input [value]="pizza.name" (keyup)="pizza.name = $event.target.value"> 
 -->
+
+<h2>Les pizzas</h2>
+<ul>
+  <li *ngFor="let pizza of pizzas" (click)="onSelect(pizza)">
+    {{pizza.name}}
+  </li>
+</ul>
