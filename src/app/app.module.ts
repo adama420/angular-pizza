@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PizzaComponent } from './pizza/pizza.component';
 import { AuthorComponent } from './author/author.component';
+import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PizzaComponent,
-    AuthorComponent
+    AuthorComponent,
+    IngredientListComponent
   ],
   imports: [
     BrowserModule,

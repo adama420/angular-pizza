@@ -1,0 +1,9 @@
+<ul>
+    <li *ngFor="let ingredient of ingredients">
+        
+        <span>{{ingredient.name}}</span><br />
+        <img [src]="'/assets/' + ingredient.image" width="100"><br />
+        <span>{{ingredient.weight}} grammes</span><br />
+        <span>{{ingredient.price}} € / kilo</span><br />
+    </li>
+</ul>
