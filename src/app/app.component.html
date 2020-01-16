@@ -1,10 +1,11 @@
 <h1>{{title}}</h1>
 <app-pizza [pizza]="selectedPizza"></app-pizza>
+<app-author [author]="typedAuthor"></app-author>
 
 
-<!-- l'équivalent de ngModel en code JS serait 
-<input [value]="pizza.name" (keyup)="pizza.name = $event.target.value"> 
--->
+
+<!-- léquivalent de ngModel en code JS serait <input [value]="pizza.name" (keyup)="pizza.name = $event.target.value">  -->
+
 
 <h2>Les pizzas</h2>
 <ul>
@@ -12,3 +13,6 @@
     {{pizza.name}}
   </li>
 </ul>
+
+<h2>Les auteurs</h2>
+<input *ngFor="let author of authors" (keyup)="onKeyUp(author)">
