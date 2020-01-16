@@ -1,6 +1,6 @@
 $color: lightgreen;
 
-li {
+.card {
     transition: 0.5;
     &:hover, &.selected {
         cursor: pointer;

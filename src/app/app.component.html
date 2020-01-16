@@ -11,14 +11,24 @@
 
 
 <h2>Les pizzas</h2>
-<ul>
-  <li *ngFor="let pizza of pizzas" 
+<div class="row">
+  <div *ngFor="let pizza of pizzas" 
   (click)="onSelect(pizza)"
-  [class.selected]="pizza === selectedPizza">
-    {{pizza.name}}
-  </li>
-</ul>
+  [class.selected]="pizza === selectedPizza"
+  class="col-3"
+  >
+  <div class="card" [class.selected]="pizza === selectedPizza">
+    <div class="card-body">
+        <h5 class="card-title">{{pizza.name}}</h5>
+        <span *ngFor= "let selectedIngredient of selectedIngredients; index as i" class="badge badge-pill badge-secondary"> {{selectedIngredient.name}} 
+          <span (click)="deleteIngredient(i)">X</span>
+        </span>
+    </div>
+  </div>
+    
+</div>
+</div>
 
-<app-ingredient-list [ingredients]="ingredients"></app-ingredient-list>
+<app-ingredient-list [ingredients]="ingredients" (select)="selectIngredient($event)"></app-ingredient-list>
 
 </div>

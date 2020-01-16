@@ -33,6 +33,7 @@ export class AppComponent {
    {name: 'Tomate', image: 'tomate.jpg', weight: 60, price: 2},
    {name: 'Olive', image: 'olive.jpeg', weight: 10, price: 1}    
   ];
+  selectedIngredients : Ingredient[] = [];
 
   constructor() {
     this.calculateAge();
@@ -52,5 +53,17 @@ export class AppComponent {
     console.log(pizza);
     this.selectedPizza = pizza;
   }
+  selectIngredient(event){
+    if(!this.selectedIngredients.includes(event)){
+      this.selectedIngredients.push(event);
+    }  
+  }
+
+  deleteIngredient(index: number){
+    event.stopPropagation();
+    this.selectedIngredients.splice(index, 1);
+  }
   
+
 }
+
