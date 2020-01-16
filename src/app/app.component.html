@@ -1,6 +1,6 @@
 <h1>{{title}}</h1>
 <app-pizza [pizza]="selectedPizza"></app-pizza>
-<app-author [author]="typedAuthor"></app-author>
+<app-author [user]="user"></app-author>
 
 
 
@@ -14,5 +14,3 @@
   </li>
 </ul>
 
-<h2>Les auteurs</h2>
-<input *ngFor="let author of authors" (keyup)="onKeyUp(author)">

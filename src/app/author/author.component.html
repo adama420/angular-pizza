@@ -1,8 +1,6 @@
-<div *ngIf="author">
-    <h2>{{author?.fname}}</h2>
-    <h2>{{author.lname}}</h2>
-    <h2>{{author.birth}} ans</h2>
-    <img src={{author.avatar}} />
-
-    <input [(ngModel)]="author.fname">
+<div>
+    <h2>{{ user.firstname + ' ' + user.name }}</h2>
+    <p>{{ user.birthday }}</p>
+    <p>Il a {{ user.age }} ans</p>
+    <img height=300 [src]="user.avatar" alt="{{ user.name }}">
 </div>
