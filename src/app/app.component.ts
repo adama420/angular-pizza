@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Pizza } from './models/pizza.model';
 import { User } from './models/user.model';
-import { Ingredient } from './models/ingredient.model'
+import { Ingredient } from './models/ingredient.model';
+
 
 const PIZZAS : Pizza[] = [
   { id: 1, name: 'Reine', price: 12 },
