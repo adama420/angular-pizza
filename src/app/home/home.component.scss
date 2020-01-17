@@ -1,0 +1,9 @@
+$color: lightgreen;
+
+.card {
+    transition: 0.5;
+    &:hover, &.selected {
+        cursor: pointer;
+        box-shadow: 1px 1px 1px 1px lightgrey;
+    }
+}
