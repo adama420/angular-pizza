@@ -9,13 +9,19 @@
 
 
 <h2>Les pizzas</h2>
+<input type="range" value="2"
+  step="1"
+  min="1"
+  [max]="pizzas.length"
+  [(ngModel)]="number"
+  *ngIf="pizzas.length > 0">
 <div class="row">
-  <div *ngFor="let pizza of pizzas" 
+  <div *ngFor="let pizza of pizzas | slice:0:number" 
   (click)="onSelect(pizza)"
   [class.selected]="pizza === selectedPizza"
   class="col-3"
   >
-    <div class="card" [class.selected]="pizza === selectedPizza">
+    <div class="card text-center" [class.selected]="pizza === selectedPizza">
       <div class="card-body">
         <h5 class="card-title">{{pizza.name}}</h5>
         <span class="badge badge-pill badge-success">{{pizza.price | test}} € TTC</span>

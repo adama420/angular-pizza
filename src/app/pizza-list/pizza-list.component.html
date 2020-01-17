@@ -1,1 +1,19 @@
-<p>pizza-list works!</p>
+<h2>Les pizzas</h2>
+<div class="row">
+    <div *ngFor="let pizza of pizzas"
+    class="col-3"
+    >
+        <div class="card mt-5 text-center">
+            <div class="card-body">
+                <h5 class="card-title">{{pizza.name}}</h5>
+                <span class="badge badge-pill badge-success">{{pizza.price | test}} € TTC</span>
+            </div>
+            <div class="card-footer">
+                <a routerLink="/pizza/{{ pizza.id }}" class="badge badge-pill badge-warning">Voir la pizza</a>
+            </div>
+
+        </div>
+    
+    </div>
+</div>
+

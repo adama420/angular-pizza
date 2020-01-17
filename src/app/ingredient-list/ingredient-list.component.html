@@ -1,5 +1,5 @@
-<ul>
-    <li *ngFor="let ingredient of ingredients" (click)="chooseIngredient(ingredient)">
+<ul class="row text-center">
+    <li class="card mx-auto mt-5" *ngFor="let ingredient of ingredients" (click)="chooseIngredient(ingredient)">
         
         <span>{{ingredient.name}}</span><br />
         <img [src]="'/assets/' + ingredient.image" width="100"><br />
