@@ -15,11 +15,12 @@
   [class.selected]="pizza === selectedPizza"
   class="col-3"
   >
-  <div class="card" [class.selected]="pizza === selectedPizza">
-    <div class="card-body">
+    <div class="card" [class.selected]="pizza === selectedPizza">
+      <div class="card-body">
         <h5 class="card-title">{{pizza.name}}</h5>
         <span class="badge badge-pill badge-success">{{pizza.price | test}} € TTC</span>
-        <span *ngFor= "let selectedIngredient of selectedIngredients; index as i" class="badge badge-pill badge-secondary"> {{selectedIngredient.name}} 
+          <a routerLink="/pizza/{{ pizza.id }}" class="btn btn-primary">Voir la pizza</a>
+          <span *ngFor= "let selectedIngredient of selectedIngredients; index as i" class="badge badge-pill badge-secondary"> {{selectedIngredient.name}} 
           <span (click)="deleteIngredient(i)">X</span>
         </span>
     </div>

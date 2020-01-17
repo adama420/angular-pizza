@@ -11,6 +11,8 @@ import { IngredientListComponent } from './ingredient-list/ingredient-list.compo
 import { MenuComponent } from './menu/menu.component';
 import { TestPipe } from './test.pipe';
 import { HomeComponent } from './home/home.component';
+import { PizzaListComponent } from './pizza-list/pizza-list.component';
+import { PizzaSingleComponent } from './pizza-single/pizza-single.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +22,19 @@ import { HomeComponent } from './home/home.component';
     IngredientListComponent,
     MenuComponent,
     TestPipe,
-    HomeComponent
+    HomeComponent,
+    PizzaListComponent,
+    PizzaSingleComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent}
+      { path: '', component: HomeComponent},
+      { path: 'pizzas', component: PizzaListComponent},
+      { path: 'pizza/:id', component: PizzaSingleComponent}
+      
     ])
   ],
   providers: [],
