@@ -2,13 +2,9 @@ import { Component } from '@angular/core';
 import { Pizza } from '../models/pizza.model';
 import { User } from '../models/user.model';
 import { Ingredient } from '../models/ingredient.model';
+import { PizzaService } from '../pizza.service';
 
-const PIZZAS : Pizza[] = [
-  { id: 1, name: 'Reine', price: 12 },
-  { id: 2, name: '4 fromages', price: 13 },
-  { id: 3, name: 'Orientale', price: 11 },
-  { id: 4, name: 'Cannibale', price: 9 }
-];
+
 
 @Component({
   selector: 'app-home',
@@ -17,7 +13,7 @@ const PIZZAS : Pizza[] = [
 })
 export class HomeComponent {
   selectedPizza: Pizza;
-  pizzas: Pizza[] = PIZZAS;
+  pizzas: Pizza[] = [];
   user: User = {
     name: 'Broquet',
     firstname: 'Adam',
@@ -31,7 +27,14 @@ export class HomeComponent {
   ];
   selectedIngredients : Ingredient[] = [];
 
-  constructor() {
+  constructor(private pizzaService: PizzaService) {
+
+  }
+
+  ngOnInit(){
+    this.pizzaService.getPizzas().then(
+      pizzas => this.pizzas = pizzas
+    );
     this.calculateAge();
   }
 
